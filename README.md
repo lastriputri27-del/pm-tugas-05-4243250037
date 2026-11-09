@@ -33,7 +33,9 @@ flutter run
 ## (c) Diagram Widget Tree
 
 `[SL]` = StatelessWidget, `[SF]` = StatefulWidget
+Tangkapan layar Widget Inspector (biru = Stateless, oranye = Stateful):
 
+![Widget Inspector](Screenshoot/Widget%20Inspector.png)
 ```
 UmkmApp [SL]
 └─ MaterialApp (tema: ColorScheme.fromSeed + darkTheme)
