@@ -64,4 +64,4 @@ Pemilihan Stateless atau Stateful saya lakukan per bagian. HalamanMenu Stateless
 
 ## (e) Pernyataan Penggunaan AI
 
-Kerangka kode aplikasi, widget test, dan draf README ini dibantu oleh AI (Claude, Anthropic). Tangkapan layar aplikasi dan Widget Inspector saya ambil sendiri dari aplikasi yang saya jalankan; penggabungan gambar Inspector dan penanda Stateless/Stateful pada gambar tersebut dibantu AI. Saya telah membaca, menjalankan, dan memahami seluruh kode serta penjelasan di atas.
+Kerangka kode aplikasi, widget test, dan draf README ini dibantu oleh AI. Saya telah membaca, menjalankan, dan memahami kode serta penjelasan di atas.
