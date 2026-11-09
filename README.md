@@ -13,17 +13,6 @@ Tugas Rutin 5, Pemrograman Mobile (3KOM40215), Pertemuan 5: Pengantar Flutter da
 
 Aplikasi satu halaman untuk UMKM kuliner fiktif "Dapur Nenek Medan": identitas usaha, kontak, dan daftar 5 menu yang dapat ditandai favorit.
 
-## Cara Menjalankan
-
-```bash
-git clone https://github.com/<username>/pm-tugas-05-4243250037.git
-cd pm-tugas-05-4243250037
-flutter pub get
-flutter analyze
-flutter test
-flutter run
-```
-
 ## (b) Tangkapan Layar
 
 | Mode Terang | Mode Gelap |
@@ -32,10 +21,8 @@ flutter run
 
 ## (c) Diagram Widget Tree
 
-`[SL]` = StatelessWidget, `[SF]` = StatefulWidget
-Tangkapan layar Widget Inspector (biru = Stateless, oranye = Stateful):
+Penanda: `[SL]` = StatelessWidget, `[SF]` = StatefulWidget.
 
-![Widget Inspector](Screenshoot/Widget%20Inspector.png)
 ```
 UmkmApp [SL]
 └─ MaterialApp (tema: ColorScheme.fromSeed + darkTheme)
@@ -61,11 +48,15 @@ UmkmApp [SL]
                                       └─ IconButton (favorite / favorite_border)
 ```
 
+Tangkapan layar Widget Inspector (biru = Stateless, oranye = Stateful):
+
+![Widget Inspector](Screenshoot/Widget%20Inspector.png)
+
 ## (d) Penjelasan Widget Tree, Element Tree, dan Render Tree
 
-Widget tree adalah konfigurasi antarmuka yang saya tulis di `build()`: MaterialApp, Scaffold, Column, hingga KartuMenu. Widget bersifat immutable dan ringan, sehingga dibuat ulang setiap `build()` dipanggil. Element tree adalah instans yang bertahan lama untuk setiap posisi widget; di sinilah objek State dan BuildContext hidup. Saat `setState()` dipanggil, element ditandai kotor, `build()` dipanggil lagi, lalu Flutter membandingkan widget baru dengan yang lama berdasarkan tipe dan key. Jika cocok, element dan render object lama dipakai ulang. Render tree berisi RenderObject seperti RenderFlex dan RenderParagraph yang menghitung ukuran, posisi, lalu menggambar ke layar.
+Widget tree adalah konfigurasi antarmuka yang saya tulis di `build()`, mulai dari MaterialApp, Scaffold, Column, hingga KartuMenu. Widget bersifat immutable dan ringan, sehingga dibuat ulang setiap `build()` dipanggil. Element tree adalah instans yang bertahan lama untuk setiap posisi widget; di sinilah objek State dan BuildContext hidup. Saat `setState()` dipanggil, element ditandai kotor, `build()` dipanggil lagi, lalu Flutter membandingkan widget baru dengan yang lama berdasarkan tipe dan key. Jika cocok, element dan render object lama dipakai ulang. Render tree berisi RenderObject seperti RenderFlex dan RenderParagraph yang menghitung ukuran dan posisi, lalu menggambarnya ke layar.
 
-Pada aplikasi ini, HalamanMenu, KepalaUsaha, KartuKontak, dan KartuMenu dibuat Stateless karena tampilannya hanya bergantung pada parameter dari luar (nama, harga, kategori) dan tidak memiliki data yang berubah. Hanya TombolFavorit yang Stateful karena menyimpan status favorit (`_favorit`) yang berubah saat pengguna menekan ikon hati. Dengan membuat bagian Stateful sekecil mungkin, `setState()` hanya membangun ulang satu ikon, bukan seluruh halaman atau daftar menu, sehingga lebih efisien dan kode lebih mudah dirawat.
+Pemilihan Stateless atau Stateful saya lakukan per bagian. HalamanMenu Stateless karena hanya menyusun halaman dan tidak menyimpan data yang berubah. KepalaUsaha Stateless karena isinya (gambar, nama, deskripsi, tombol) tetap. KartuKontak Stateless karena hanya menampilkan informasi kontak yang statis. KartuMenu Stateless karena tampilannya hanya bergantung pada parameter nama, harga, dan kategori dari luar. TombolFavorit adalah satu-satunya Stateful karena menyimpan status favorit (`_favorit`) yang berubah saat ikon hati ditekan. Dengan membuat bagian Stateful sekecil mungkin, `setState()` hanya membangun ulang satu ikon, bukan seluruh halaman atau daftar menu, sehingga lebih efisien dan kode lebih mudah dirawat.
 
 ## Komponen Material 3 yang Dipakai
 
@@ -73,4 +64,4 @@ Pada aplikasi ini, HalamanMenu, KepalaUsaha, KartuKontak, dan KartuMenu dibuat S
 
 ## (e) Pernyataan Penggunaan AI
 
-Kerangka kode aplikasi, widget test, dan draf README ini dibantu oleh AI. Saya telah membaca, menjalankan, dan memahami seluruh kode serta penjelasan di atas.
+Kerangka kode aplikasi, widget test, dan draf README ini dibantu oleh AI (Claude, Anthropic). Tangkapan layar aplikasi dan Widget Inspector saya ambil sendiri dari aplikasi yang saya jalankan; penggabungan gambar Inspector dan penanda Stateless/Stateful pada gambar tersebut dibantu AI. Saya telah membaca, menjalankan, dan memahami seluruh kode serta penjelasan di atas.
