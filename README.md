@@ -6,9 +6,9 @@ Tugas Rutin 5, Pemrograman Mobile (3KOM40215), Pertemuan 5: Pengantar Flutter da
 
 | | |
 |---|---|
-| Nama | _isi nama lengkap_ |
-| NIM | _isi NIM_ |
-| Kelas | _isi kelas_ |
+| Nama | Lastri P. Silaban |
+| NIM | 4243250037 |
+| Kelas | PSIK-24C |
 | Program Studi | Ilmu Komputer, FMIPA, Universitas Negeri Medan |
 
 Aplikasi satu halaman untuk UMKM kuliner fiktif "Dapur Nenek Medan": identitas usaha, kontak, dan daftar 5 menu yang dapat ditandai favorit.
@@ -16,10 +16,9 @@ Aplikasi satu halaman untuk UMKM kuliner fiktif "Dapur Nenek Medan": identitas u
 ## Cara Menjalankan
 
 ```bash
-flutter create --org id.ac.unimed umkm_kuliner
-cd umkm_kuliner
-flutter pub add material_ui
-# salin lib/main.dart dan test/widget_test.dart dari repository ini
+git clone https://github.com/<username>/pm-tugas-05-4243250037.git
+cd pm-tugas-05-4243250037
+flutter pub get
 flutter analyze
 flutter test
 flutter run
@@ -29,7 +28,7 @@ flutter run
 
 | Mode Terang | Mode Gelap |
 |---|---|
-| _tempel screenshot_ | _tempel screenshot_ |
+| ![Mode Terang](Screenshoot/Screenshot%20Mode%20Terang.png) | ![Mode Gelap](Screenshoot/Screenshot%20Mode%20Gelap.png) |
 
 ## (c) Diagram Widget Tree
 
@@ -72,4 +71,4 @@ Pada aplikasi ini, HalamanMenu, KepalaUsaha, KartuKontak, dan KartuMenu dibuat S
 
 ## (e) Pernyataan Penggunaan AI
 
-Kerangka kode aplikasi, widget test, dan draf README ini dibantu oleh Claude (Anthropic). Saya telah membaca, menjalankan, dan memahami seluruh kode serta penjelasan di atas. _Sesuaikan pernyataan ini dengan keadaan sebenarnya._
+Kerangka kode aplikasi, widget test, dan draf README ini dibantu oleh AI. Saya telah membaca, menjalankan, dan memahami seluruh kode serta penjelasan di atas.
